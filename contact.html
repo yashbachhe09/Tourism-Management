@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact us for more information</title>
+</head>
+
+<body>
+  <br><br>
+  <br><br>
+  <br><br>
+  <div id="container">
+    <h1>Contact us for more information</h1>
+
+    <div id="feedback-form">
+      <form name="submit" method="post" action="C:\Users\hp\OneDrive\Desktop\s1.html">
+        <input type="name" name="name" placeholder="Your Name" required>
+        <br><br>
+        <input type="text" name="mobile" placeholder="Your Mobile no." required><br>
+        <br><br>
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <br><br>
+
+        <textarea name="feedback" placeholder="Your Feedback" required></textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  <script>
+    function validateForm() {
+      // Get the form elements
+      const name = document.querySelector('#name');
+      const mobile = document.querySelector('#mobile');
+      const email = document.querySelector('#email');
+      const division = document.querySelector('#Div');
+      const department = document.querySelector('#Department');
+      const rollNo = document.querySelector('#roll no');
+      const feedback = document.querySelector('#feedback');
+
+      // Check if all the fields are filled
+      if (name.value === '' || mobile.value === '' || email.value === '' || division.value === '' || department.value === '' || rollNo.value === '' || feedback.value === '') {
+        alert('Please fill all the fields.');
+        return false;
+      }
+
+      // Check if the email address is valid
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (!emailRegex.test(email.value)) {
+        alert('Please enter a valid email address.');
+        return false;
+      }
+
+      // Check if the mobile number is valid
+      const mobileRegex = /^[6-9]\d{9}$/;
+      if (!mobileRegex.test(mobile.value)) {
+        alert('Please enter a valid mobile number.');
+        return false;
+      }
+
+      // Check if the roll number is valid
+      const rollNoRegex = /^[0-9]{5,10}$/;
+      if (!rollNoRegex.test(rollNo.value)) {
+        alert('Please enter a valid roll number.');
+        return false;
+      }
+
+      // If all the fields are valid, submit the form
+      return true;
+
+      const submitButton = document.querySelector("C:\Users\hp\OneDrive\Desktop\s1.html");
+      submitButton.addEventListener('click', validateForm);
+    }
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: aquamarine;
+    }
+
+    #container {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    #feedback-form {
+      margin-top: 20px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</body>
+
+</html>
